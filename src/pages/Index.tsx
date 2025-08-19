@@ -22,9 +22,11 @@ import {
 
 // Import product images
 import heroImage from "@/assets/hero-onion-garlic.jpg";
-import onionFlakes from "@/assets/onion-flakes.jpg";
-import garlicPowder from "@/assets/garlic-powder.jpg";
-import wholeGarlic from "@/assets/whole-garlic.jpg";
+import dehydratedOnionPowder from "@/assets/dehydrated-onion-powder.jpg";
+import dehydratedGarlicPowder from "@/assets/dehydrated-garlic-powder.jpg";
+import friedOnions from "@/assets/fried-onions.jpg";
+import onionFlakesVarieties from "@/assets/onion-flakes-varieties.jpg";
+import dehydratedMincedGarlic from "@/assets/dehydrated-minced-garlic.jpg";
 
 const Index = () => {
   return (
@@ -34,7 +36,7 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold text-primary">
-              FreshExports
+              Rudraksh Enterprise
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#home" className="text-foreground hover:text-primary transition-smooth">Home</a>
@@ -219,21 +221,21 @@ const Index = () => {
               <CardContent className="p-0">
                 <div className="overflow-hidden rounded-t-lg">
                   <img 
-                    src={onionFlakes} 
-                    alt="Premium onion flakes for export" 
+                    src={dehydratedOnionPowder} 
+                    alt="Premium dehydrated onion powder for export" 
                     className="w-full h-64 object-cover group-hover:scale-105 transition-smooth"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">Onion Flakes</h3>
+                  <h3 className="text-xl font-semibold mb-3">Dehydrated Onion Powder</h3>
                   <p className="text-muted-foreground mb-4">
-                    Perfectly dehydrated onion flakes with consistent texture and rich flavor. 
-                    Ideal for seasoning blends and food processing.
+                    Ultra-fine dehydrated onion powder with rich flavor and aroma. 
+                    Perfect for seasoning, food processing and culinary applications.
                   </p>
                   <div className="space-y-2">
                     <div className="flex items-center text-sm text-muted-foreground">
                       <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                      Moisture content: &lt;8%
+                      Moisture content: &lt;5%
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <CheckCircle className="w-4 h-4 text-primary mr-2" />
@@ -241,7 +243,7 @@ const Index = () => {
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                      Packaging: Moisture-proof bags
+                      Mesh size: 100-120
                     </div>
                   </div>
                 </div>
@@ -252,29 +254,29 @@ const Index = () => {
               <CardContent className="p-0">
                 <div className="overflow-hidden rounded-t-lg">
                   <img 
-                    src={garlicPowder} 
-                    alt="Premium garlic powder for export" 
+                    src={dehydratedGarlicPowder} 
+                    alt="Premium dehydrated garlic powder for export" 
                     className="w-full h-64 object-cover group-hover:scale-105 transition-smooth"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">Garlic Powder</h3>
+                  <h3 className="text-xl font-semibold mb-3">Dehydrated Garlic Powder</h3>
                   <p className="text-muted-foreground mb-4">
-                    Ultra-fine garlic powder with exceptional aroma and consistent quality. 
-                    Perfect for culinary applications and food manufacturing.
+                    Premium quality dehydrated garlic powder with strong aroma and flavor. 
+                    Ideal for food manufacturing and culinary preparations.
                   </p>
                   <div className="space-y-2">
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                      Mesh size: 80-120
-                    </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <CheckCircle className="w-4 h-4 text-primary mr-2" />
                       Purity: 99.5%+
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                      Automated grinding
+                      Moisture: &lt;6%
+                    </div>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                      Ultra-fine grinding
                     </div>
                   </div>
                 </div>
@@ -285,29 +287,95 @@ const Index = () => {
               <CardContent className="p-0">
                 <div className="overflow-hidden rounded-t-lg">
                   <img 
-                    src={wholeGarlic} 
-                    alt="Premium whole garlic for export" 
+                    src={friedOnions} 
+                    alt="Premium fried onions for export" 
                     className="w-full h-64 object-cover group-hover:scale-105 transition-smooth"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">Whole Garlic</h3>
+                  <h3 className="text-xl font-semibold mb-3">Fried Onions</h3>
                   <p className="text-muted-foreground mb-4">
-                    Fresh, premium-grade whole garlic bulbs with excellent shelf life. 
-                    Carefully selected and hygienically packed for global distribution.
+                    Crispy, golden fried onions with authentic taste and texture. 
+                    Perfect for garnishing and food preparation applications.
                   </p>
                   <div className="space-y-2">
                     <div className="flex items-center text-sm text-muted-foreground">
                       <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                      Size: 4.5-6.5cm diameter
+                      Crispy texture
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                      Storage: 6-9 months
+                      Extended shelf life
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                      Hand-sorted quality
+                      Vacuum packed
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="card-shadow hover:shadow-xl transition-smooth group">
+              <CardContent className="p-0">
+                <div className="overflow-hidden rounded-t-lg">
+                  <img 
+                    src={onionFlakesVarieties} 
+                    alt="White, red and pink onion flakes varieties for export" 
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-smooth"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-3">Onion Flakes (White/Red/Pink)</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Premium quality onion flakes in white, red and pink varieties. 
+                    Consistent texture and rich flavor for diverse culinary needs.
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                      Multiple varieties
+                    </div>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                      Uniform flake size
+                    </div>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                      Moisture-free packing
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="card-shadow hover:shadow-xl transition-smooth group">
+              <CardContent className="p-0">
+                <div className="overflow-hidden rounded-t-lg">
+                  <img 
+                    src={dehydratedMincedGarlic} 
+                    alt="Premium dehydrated minced garlic for export" 
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-smooth"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-3">Dehydrated Minced Garlic</h3>
+                  <p className="text-muted-foreground mb-4">
+                    High-quality dehydrated minced garlic with excellent rehydration properties. 
+                    Ideal for ready-to-use food applications and processing.
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                      Granular texture
+                    </div>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                      Quick rehydration
+                    </div>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                      Strong flavor profile
                     </div>
                   </div>
                 </div>
@@ -489,8 +557,8 @@ const Index = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Head Office</h4>
                       <p className="text-muted-foreground">
-                        123 Export Hub, Agricultural District<br />
-                        Mumbai, Maharashtra 400001, India
+                        Mahuva, Bhavnagar<br />
+                        Gujarat, India
                       </p>
                     </div>
                   </div>
@@ -500,8 +568,8 @@ const Index = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Phone & WhatsApp</h4>
                       <p className="text-muted-foreground">
-                        +91 22 1234 5678<br />
-                        +91 98765 43210 (WhatsApp)
+                        +91 7383409122<br />
+                        +91 7383409122 (WhatsApp)
                       </p>
                     </div>
                   </div>
@@ -511,8 +579,8 @@ const Index = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
                       <p className="text-muted-foreground">
-                        exports@freshexports.com<br />
-                        samples@freshexports.com
+                        kalpitgor@gmail.com<br />
+                        Contact us for samples & quotes
                       </p>
                     </div>
                   </div>
@@ -523,12 +591,8 @@ const Index = () => {
                 <h4 className="font-semibold mb-4">Business Hours</h4>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span>Monday - Friday</span>
-                    <span className="text-muted-foreground">9:00 AM - 6:00 PM IST</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Saturday</span>
-                    <span className="text-muted-foreground">9:00 AM - 2:00 PM IST</span>
+                    <span>Monday - Saturday</span>
+                    <span className="text-muted-foreground">9:00 AM - 7:00 PM IST</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Sunday</span>
@@ -565,7 +629,7 @@ const Index = () => {
                 
                 <div>
                   <label className="block text-sm font-medium mb-2">Product Interest</label>
-                  <Input placeholder="e.g., Garlic Powder, Onion Flakes, Whole Garlic" />
+                  <Input placeholder="e.g., Dehydrated Onion Powder, Fried Onions, Minced Garlic" />
                 </div>
                 
                 <div>
@@ -591,9 +655,9 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="text-2xl font-bold mb-4">FreshExports</div>
+              <div className="text-2xl font-bold mb-4">Rudraksh Enterprise</div>
               <p className="text-background/80 mb-4">
-                Premium onion and garlic exports with uncompromising quality and global reach.
+                Premium dehydrated onion and garlic products with uncompromising quality and global reach.
               </p>
               <div className="flex space-x-4">
                 <div className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center">
@@ -615,10 +679,11 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4">Products</h4>
               <div className="space-y-2">
-                <div className="text-background/80">Onion Flakes</div>
-                <div className="text-background/80">Garlic Powder</div>
-                <div className="text-background/80">Whole Garlic</div>
-                <div className="text-background/80">Custom Processing</div>
+                <div className="text-background/80">Dehydrated Onion Powder</div>
+                <div className="text-background/80">Dehydrated Garlic Powder</div>
+                <div className="text-background/80">Fried Onions</div>
+                <div className="text-background/80">Onion Flakes (White/Red/Pink)</div>
+                <div className="text-background/80">Dehydrated Minced Garlic</div>
               </div>
             </div>
             
@@ -643,7 +708,7 @@ const Index = () => {
           
           <div className="border-t border-background/20 mt-8 pt-8 text-center">
             <p className="text-background/60">
-              © 2024 FreshExports. All rights reserved. | Delivering quality worldwide.
+              © 2024 Rudraksh Enterprise. All rights reserved. | Delivering quality worldwide.
             </p>
           </div>
         </div>

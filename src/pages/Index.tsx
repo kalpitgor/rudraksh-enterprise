@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import { CounterAnimation } from "@/components/CounterAnimation";
 import { 
   Globe, 
   Shield, 
@@ -52,58 +53,74 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center section-gradient">
-        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+      <section id="home" className="relative min-h-screen flex items-center section-gradient overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="floating-shapes">
+            <div className="shape shape-1"></div>
+            <div className="shape shape-2"></div>
+            <div className="shape shape-3"></div>
+            <div className="shape shape-4"></div>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="space-y-8 animate-slide-up">
             <div className="space-y-4">
-              <Badge className="bg-primary/10 text-primary border-primary/20">
-                <Globe className="w-4 h-4 mr-2" />
+              <Badge className="bg-primary/10 text-primary border-primary/20 animate-fade-in-delay">
+                <Globe className="w-4 h-4 mr-2 animate-pulse" />
                 Global Export Excellence
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                Premium <span className="text-primary">Onion & Garlic</span> Exports
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-delay-2 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+                Premium <span className="text-primary glow-text">Onion & Garlic</span> Exports
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-xl text-muted-foreground leading-relaxed animate-fade-in-delay-3">
                 Delivering the finest quality onions and garlic to global markets with 
                 uncompromising hygiene standards, automated processing, and moisture-free packaging.
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="lg">
+            <div className="flex flex-wrap gap-4 animate-fade-in-delay-4">
+              <Button variant="hero" size="lg" className="hover-float">
                 <Package className="w-5 h-5 mr-2" />
                 Explore Products
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="hover-float">
                 <Mail className="w-5 h-5 mr-2" />
                 Request Samples
               </Button>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 pt-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">50+</div>
+            <div className="grid grid-cols-3 gap-6 pt-8 animate-fade-in-delay-5">
+              <div className="text-center counter-animation">
+                <CounterAnimation target={50} suffix="+" />
                 <div className="text-sm text-muted-foreground">Countries Served</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">1000+</div>
+              <div className="text-center counter-animation">
+                <CounterAnimation target={1000} suffix="+" />
                 <div className="text-sm text-muted-foreground">Happy Clients</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">99%</div>
+              <div className="text-center counter-animation">
+                <CounterAnimation target={99} suffix="%" />
                 <div className="text-sm text-muted-foreground">Quality Assurance</div>
               </div>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl card-shadow">
+          <div className="relative animate-slide-left">
+            <div className="relative overflow-hidden rounded-2xl card-shadow hover-tilt">
               <img 
                 src={heroImage} 
                 alt="Premium quality onions and garlic for export" 
-                className="w-full h-[600px] object-cover"
+                className="w-full h-[600px] object-cover transform transition-transform duration-700 hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              <div className="absolute top-4 right-4">
+                <div className="bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center space-x-2 pulse-glow">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium">Premium Quality</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

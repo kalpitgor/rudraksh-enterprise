@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -5,6 +6,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { CounterAnimation } from "@/components/CounterAnimation";
 import { TypewriterEffect } from "@/components/TypewriterEffect";
+import { ProductSidebar } from "@/components/ProductSidebar";
+import { ProductDisplay } from "@/components/ProductDisplay";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { productCategories } from "@/data/products";
 import { 
   Globe, 
   Shield, 
@@ -31,6 +36,43 @@ import onionFlakesVarieties from "@/assets/onion-flakes-varieties.jpg";
 import dehydratedMincedGarlic from "@/assets/dehydrated-minced-garlic.jpg";
 
 const Index = () => {
+  const [selectedCategory, setSelectedCategory] = useState("white-onion");
+  const [showProducts, setShowProducts] = useState(false);
+
+  const selectedCategoryData = productCategories.find(cat => cat.id === selectedCategory);
+
+  const handleCategorySelect = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    setShowProducts(true);
+  };
+
+  if (showProducts && selectedCategoryData) {
+    return (
+      <SidebarProvider>
+        <div className="min-h-screen flex w-full">
+          <ProductSidebar 
+            selectedCategory={selectedCategory} 
+            onCategorySelect={handleCategorySelect} 
+          />
+          <main className="flex-1 p-6">
+            {/* Header with back to home */}
+            <div className="mb-6 flex items-center justify-between">
+              <SidebarTrigger className="lg:hidden" />
+              <Button 
+                variant="outline" 
+                onClick={() => setShowProducts(false)}
+                className="ml-auto"
+              >
+                Back to Home
+              </Button>
+            </div>
+            <ProductDisplay category={selectedCategoryData} />
+          </main>
+        </div>
+      </SidebarProvider>
+    );
+  }
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -87,7 +129,12 @@ const Index = () => {
             </div>
             
             <div className="flex flex-wrap gap-4 animate-fade-in-delay-4">
-              <Button variant="hero" size="lg" className="hover-float">
+              <Button 
+                onClick={() => setShowProducts(true)}
+                variant="hero" 
+                size="lg" 
+                className="hover-float"
+              >
                 <Package className="w-5 h-5 mr-2" />
                 Explore Products
               </Button>

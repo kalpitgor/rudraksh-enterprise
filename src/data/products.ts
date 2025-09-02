@@ -23,7 +23,7 @@ export const productCategories: ProductCategory[] = [
     description: "Premium quality dehydrated white onion products processed with advanced technology for maximum flavor retention and shelf life.",
     seoTitle: "Dehydrated White Onion Products - Flakes, Minced, Chopped & Granules",
     seoDescription: "High-quality dehydrated white onion flakes, minced, chopped and granules. Premium white onion powder for food industry. Export quality guaranteed.",
-    keywords: ["dehydrated white onion", "white onion flakes", "white onion powder", "dehydrated onion", "onion granules"],
+    keywords: ["dehydrated white onion", "dehydrated white onion powder", "dehydrated white onion flakes", "dehydrated white onion minced", "dehydrated white onion chopped", "white onion granules", "premium white onion export"],
     products: [
       {
         id: "white-onion-flakes",
@@ -75,7 +75,7 @@ export const productCategories: ProductCategory[] = [
     description: "Premium quality dehydrated red onion products with rich color and robust flavor, perfect for culinary applications worldwide.",
     seoTitle: "Dehydrated Red Onion Products - Flakes, Minced, Chopped & Granules",
     seoDescription: "Premium dehydrated red onion flakes, minced, chopped and granules. High-quality red onion powder for food industry with natural color retention.",
-    keywords: ["dehydrated red onion", "red onion flakes", "red onion powder", "dehydrated onion", "red onion granules"],
+    keywords: ["dehydrated red onion", "dehydrated red onion powder", "dehydrated red onion flakes", "dehydrated red onion minced", "dehydrated red onion chopped", "red onion granules", "premium red onion export"],
     products: [
       {
         id: "red-onion-flakes",
@@ -179,7 +179,7 @@ export const productCategories: ProductCategory[] = [
     description: "Premium quality dehydrated garlic products with intense flavor and aroma, processed using state-of-the-art technology for maximum potency.",
     seoTitle: "Dehydrated Garlic Products - Flakes, Minced, Chopped & Granules",
     seoDescription: "Premium dehydrated garlic flakes, minced, chopped and granules. High-quality garlic powder with intense flavor and aroma for food industry.",
-    keywords: ["dehydrated garlic", "garlic flakes", "garlic powder", "dehydrated garlic powder", "garlic granules"],
+    keywords: ["dehydrated garlic", "dehydrated garlic powder", "dehydrated garlic flakes", "dehydrated garlic minced", "dehydrated garlic chopped", "garlic granules", "premium garlic export"],
     products: [
       {
         id: "garlic-flakes",

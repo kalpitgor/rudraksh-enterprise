@@ -649,7 +649,7 @@ const Index = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
                       <p className="text-muted-foreground">
-                        kalpitgor@gmail.com<br />
+                        sales@rudraksh-enterprise.com<br />
                         Contact us for samples & quotes
                       </p>
                     </div>

@@ -12,7 +12,7 @@ export function ProductDisplay({ category }: ProductDisplayProps) {
   const handleInquiry = (productName: string) => {
     const subject = `Inquiry for ${productName}`;
     const body = `Dear Rudraksh Enterprise,\n\nI am interested in your ${productName}. Please provide more details about pricing, minimum order quantity, and availability.\n\nThank you.`;
-    window.open(`mailto:info@rudrakshenterprise.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+    window.open(`mailto:sales@rudraksh-enterprise.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
   };
 
   return (

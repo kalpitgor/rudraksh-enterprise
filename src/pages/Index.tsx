@@ -638,8 +638,8 @@ const Index = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Phone & WhatsApp</h4>
                       <p className="text-muted-foreground">
-                        +91 7383409122<br />
-                        +91 7383409122 (WhatsApp)
+                        <a href="tel:+917383409122" className="hover:underline" aria-label="Call +91 7383409122">+91 7383409122</a><br />
+                        <a href="https://wa.me/917383409122" target="_blank" rel="noopener noreferrer" className="hover:underline" aria-label="Chat on WhatsApp +91 7383409122">+91 7383409122 (WhatsApp)</a>
                       </p>
                     </div>
                   </div>
@@ -649,7 +649,7 @@ const Index = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
                       <p className="text-muted-foreground">
-                        sales@rudraksh-enterprise.com<br />
+                        <a href="mailto:sales@rudraksh-enterprise.com" className="hover:underline" aria-label="Email sales@rudraksh-enterprise.com">sales@rudraksh-enterprise.com</a><br />
                         Contact us for samples & quotes
                       </p>
                     </div>

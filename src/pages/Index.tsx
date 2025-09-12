@@ -36,7 +36,7 @@ import onionFlakesVarieties from "@/assets/onion-flakes-varieties.jpg";
 import dehydratedMincedGarlic from "@/assets/dehydrated-minced-garlic.jpg";
 
 const Index = () => {
-  const [selectedCategory, setSelectedCategory] = useState("white-onion");
+  const [selectedCategory, setSelectedCategory] = useState("dehydrated-white-onion");
   const [showProducts, setShowProducts] = useState(false);
 
   const selectedCategoryData = productCategories.find(cat => cat.id === selectedCategory);

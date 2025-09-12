@@ -20,10 +20,10 @@ interface ProductSidebarProps {
 }
 
 const categories = [
-  { id: "white-onion", name: "White Onion", icon: Package },
-  { id: "red-onion", name: "Red Onion", icon: Package },
-  { id: "pink-onion", name: "Pink Onion", icon: Package },
-  { id: "garlic", name: "Garlic", icon: Leaf },
+  { id: "dehydrated-white-onion", name: "Dehydrated White Onion", icon: Package },
+  { id: "dehydrated-red-onion", name: "Dehydrated Red Onion", icon: Package },
+  { id: "dehydrated-pink-onion", name: "Dehydrated Pink Onion", icon: Package },
+  { id: "dehydrated-garlic", name: "Dehydrated Garlic", icon: Leaf },
   { id: "fried-onion", name: "Fried Onion", icon: Package },
 ];
 

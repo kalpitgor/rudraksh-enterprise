@@ -35,45 +35,6 @@ import onionFlakesVarieties from "@/assets/onion-flakes-varieties.jpg";
 import dehydratedMincedGarlic from "@/assets/dehydrated-minced-garlic.jpg";
 
 const Index = () => {
-<<<<<<< Updated upstream
-  const [selectedCategory, setSelectedCategory] = useState("dehydrated-white-onion");
-  const [showProducts, setShowProducts] = useState(false);
-
-  const selectedCategoryData = productCategories.find(cat => cat.id === selectedCategory);
-
-  const handleCategorySelect = (categoryId: string) => {
-    setSelectedCategory(categoryId);
-    setShowProducts(true);
-  };
-
-  if (showProducts && selectedCategoryData) {
-    return (
-      <SidebarProvider>
-        <div className="min-h-screen flex w-full">
-          <ProductSidebar 
-            selectedCategory={selectedCategory} 
-            onCategorySelect={handleCategorySelect} 
-          />
-          <main className="flex-1 p-6">
-            {/* Header with back to home */}
-            <div className="mb-6 flex items-center justify-between">
-              <SidebarTrigger className="lg:hidden" />
-              <Button 
-                variant="outline" 
-                onClick={() => setShowProducts(false)}
-                className="ml-auto"
-              >
-                Back to Home
-              </Button>
-            </div>
-            <ProductDisplay category={selectedCategoryData} />
-          </main>
-        </div>
-      </SidebarProvider>
-    );
-  }
-=======
->>>>>>> Stashed changes
 
   return (
     <div className="min-h-screen">

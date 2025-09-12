@@ -245,31 +245,45 @@
 
   /* Animation classes */
   .animate-slide-up {
-    animation: slide-up 0.8s ease-out;
+    animation: slide-up 0.6s ease-out;
+    will-change: transform, opacity;
+    transform: translateZ(0);
   }
 
   .animate-slide-left {
-    animation: slide-left 0.8s ease-out;
+    animation: slide-left 0.6s ease-out;
+    will-change: transform, opacity;
+    transform: translateZ(0);
   }
 
   .animate-fade-in-delay {
-    animation: fade-in-up 0.6s ease-out 0.2s both;
+    animation: fade-in-up 0.5s ease-out 0.2s both;
+    will-change: transform, opacity;
+    transform: translateZ(0);
   }
 
   .animate-fade-in-delay-2 {
-    animation: fade-in-up 0.6s ease-out 0.4s both;
+    animation: fade-in-up 0.5s ease-out 0.4s both;
+    will-change: transform, opacity;
+    transform: translateZ(0);
   }
 
   .animate-fade-in-delay-3 {
-    animation: fade-in-up 0.6s ease-out 0.6s both;
+    animation: fade-in-up 0.5s ease-out 0.6s both;
+    will-change: transform, opacity;
+    transform: translateZ(0);
   }
 
   .animate-fade-in-delay-4 {
-    animation: fade-in-up 0.6s ease-out 0.8s both;
+    animation: fade-in-up 0.5s ease-out 0.8s both;
+    will-change: transform, opacity;
+    transform: translateZ(0);
   }
 
   .animate-fade-in-delay-5 {
-    animation: fade-in-up 0.6s ease-out 1s both;
+    animation: fade-in-up 0.5s ease-out 1s both;
+    will-change: transform, opacity;
+    transform: translateZ(0);
   }
 
   .hover-float {
@@ -286,11 +300,11 @@
   }
 
   .glow-text {
-    animation: glow 3s ease-in-out infinite;
+    animation: glow 6s ease-in-out infinite;
   }
 
   .pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+    animation: pulse-glow 4s ease-in-out infinite;
   }
 
   /* Floating background shapes */
@@ -305,7 +319,8 @@
     position: absolute;
     background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
     border-radius: 50%;
-    animation: floating-shapes 20s ease-in-out infinite;
+    animation: floating-shapes 40s linear infinite;
+    will-change: transform;
   }
 
   .shape-1 {
@@ -351,10 +366,27 @@
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.6s ease-out;
+    will-change: transform, opacity;
+    transform: translate3d(0, 50px, 0);
   }
 
   .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .floating-shapes { display: none; }
+    .glow-text, .pulse-glow { animation-duration: 8s; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .floating-shapes, .glow-text, .pulse-glow { animation: none !important; }
   }
 }

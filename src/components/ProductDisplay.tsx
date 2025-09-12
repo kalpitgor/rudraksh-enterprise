@@ -3,6 +3,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Package, CheckCircle, Mail } from "lucide-react";
 import { ProductCategory } from "@/data/products";
+import dehydratedOnionPowder from "@/assets/dehydrated-onion-powder.jpg";
+import dehydratedGarlicPowder from "@/assets/dehydrated-garlic-powder.jpg";
+import friedOnions from "@/assets/fried-onions.jpg";
+import onionFlakesVarieties from "@/assets/onion-flakes-varieties.jpg";
+import dehydratedMincedGarlic from "@/assets/dehydrated-minced-garlic.jpg";
 
 interface ProductDisplayProps {
   category: ProductCategory;
@@ -13,6 +18,21 @@ export function ProductDisplay({ category }: ProductDisplayProps) {
     const subject = `Inquiry for ${productName}`;
     const body = `Dear Rudraksh Enterprise,\n\nI am interested in your ${productName}. Please provide more details about pricing, minimum order quantity, and availability.\n\nThank you.`;
     window.open(`mailto:sales@rudraksh-enterprise.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+  };
+
+  const getProductImage = (): string => {
+    switch (category.id) {
+      case "white-onion":
+      case "red-onion":
+      case "pink-onion":
+        return onionFlakesVarieties;
+      case "garlic":
+        return dehydratedMincedGarlic;
+      case "fried-onion":
+        return friedOnions;
+      default:
+        return dehydratedOnionPowder;
+    }
   };
 
   return (
@@ -38,9 +58,16 @@ export function ProductDisplay({ category }: ProductDisplayProps) {
       </div>
 
       {/* Products Grid */}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {category.products.map((product) => (
-          <Card key={product.id} className="group hover:shadow-lg transition-all duration-300 hover:scale-105">
+          <Card key={product.id} className="group hover:shadow-lg transition-all duration-300">
+            <div className="overflow-hidden rounded-t-lg">
+              <img
+                src={getProductImage()}
+                alt={product.name}
+                className="w-full h-48 object-cover group-hover:scale-105 transition-all duration-500"
+              />
+            </div>
             <CardHeader>
               <CardTitle className="text-lg font-semibold group-hover:text-primary transition-colors">
                 {product.name}

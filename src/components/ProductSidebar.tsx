@@ -9,6 +9,9 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton,
   SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar";
@@ -19,12 +22,72 @@ interface ProductSidebarProps {
   onCategorySelect: (category: string) => void;
 }
 
-const categories = [
-  { id: "white-onion", name: "White Onion", icon: Package },
-  { id: "red-onion", name: "Red Onion", icon: Package },
-  { id: "pink-onion", name: "Pink Onion", icon: Package },
-  { id: "garlic", name: "Garlic", icon: Leaf },
-  { id: "fried-onion", name: "Fried Onion", icon: Package },
+type SidebarCategory = {
+  id: string;
+  name: string;
+  icon: any;
+  subItems?: string[];
+};
+
+const categories: SidebarCategory[] = [
+  {
+    id: "white-onion",
+    name: "Dehydrated White Onion",
+    icon: Package,
+    subItems: [
+      "Dehydrated White Onion flakes",
+      "Dehydrated White Onion Minced",
+      "Dehydrated White Onion Chopped",
+      "Dehydrated White Onion Powder",
+      "Dehydrated White Onion Mesh",
+    ],
+  },
+  {
+    id: "red-onion",
+    name: "Dehydrated Red Onion",
+    icon: Package,
+    subItems: [
+      "Dehydrated Red Onion flakes",
+      "Dehydrated Red Onion Minced",
+      "Dehydrated Red Onion Chopped",
+      "Dehydrated Red Onion Powder",
+      "Dehydrated Red Onion Mesh",
+    ],
+  },
+  {
+    id: "pink-onion",
+    name: "Dehydrated Pink Onion",
+    icon: Package,
+    subItems: [
+      "Dehydrated Pink Onion flakes",
+      "Dehydrated Pink Onion Minced",
+      "Dehydrated Pink Onion Chopped",
+      "Dehydrated Pink Onion Powder",
+      "Dehydrated Pink Onion Mesh",
+    ],
+  },
+  {
+    id: "garlic",
+    name: "Dehydrated Garlic",
+    icon: Leaf,
+    subItems: [
+      "Dehydrated Garlic Granules",
+      "Dehydrated Garlic Minced",
+      "Dehydrated Garlic Chopped",
+      "Dehydrated Garlic Powder",
+      "Dehydrated Garlic Mesh",
+    ],
+  },
+  {
+    id: "fried-onion",
+    name: "Fried Onion",
+    icon: Package,
+    subItems: [
+      "Fresh Fried Onions",
+      "Dehydrated Fried Onions",
+      "Coated Fried Onions",
+    ],
+  },
 ];
 
 export function ProductSidebar({ selectedCategory, onCategorySelect }: ProductSidebarProps) {
@@ -64,6 +127,20 @@ export function ProductSidebar({ selectedCategory, onCategorySelect }: ProductSi
                         </>
                       )}
                     </SidebarMenuButton>
+                    {!collapsed && category.subItems && category.subItems.length > 0 && (
+                      <SidebarMenuSub>
+                        {category.subItems.map((item) => (
+                          <SidebarMenuSubItem key={`${category.id}-${item}`}>
+                            <SidebarMenuSubButton
+                              asChild={false}
+                              onClick={() => onCategorySelect(category.id)}
+                            >
+                              <span>{item}</span>
+                            </SidebarMenuSubButton>
+                          </SidebarMenuSubItem>
+                        ))}
+                      </SidebarMenuSub>
+                    )}
                   </SidebarMenuItem>
                 );
               })}

@@ -1,13 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Link, NavLink } from "react-router-dom";
+import logoImage from "@/assets/ic_logo.png";
 
 export default function Header() {
   return (
     <nav className="bg-background/95 backdrop-blur-sm border-b sticky top-0 z-50">
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-primary">
-            Rudraksh Enterprise
+          <Link to="/" className="flex items-center">
+            <img 
+              src={logoImage} 
+              alt="Rudraksh Enterprise" 
+              className="h-12 w-auto"
+            />
           </Link>
           <div className="hidden md:flex space-x-8">
             <NavLink

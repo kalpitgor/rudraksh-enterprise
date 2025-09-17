@@ -95,17 +95,24 @@ export function ProductSidebar({ selectedCategory, onCategorySelect }: ProductSi
   const collapsed = state === "collapsed";
 
   return (
-    <Sidebar className={cn("border-r bg-card shadow-sm", collapsed ? "w-14" : "w-64")} collapsible="icon">
-      <SidebarTrigger className="m-2 self-end" />
+    <Sidebar 
+      className={cn(
+        "border-r bg-card shadow-sm",
+        collapsed ? "w-14" : "w-64",
+        "lg:w-64" // Ensure full width on large screens
+      )} 
+      collapsible="icon"
+    >
+      <SidebarTrigger className="m-2 self-end lg:hidden" />
       
       <SidebarContent className="p-4">
         <SidebarGroup>
-          <SidebarGroupLabel className="text-primary font-semibold text-center">
+          <SidebarGroupLabel className="text-primary font-semibold text-center text-sm lg:text-base">
             {!collapsed && "Product Categories"}
           </SidebarGroupLabel>
           
           <SidebarGroupContent>
-            <SidebarMenu className="space-y-2">
+            <SidebarMenu className="space-y-1 lg:space-y-2">
               {categories.map((category) => {
                 const isActive = selectedCategory === category.id;
                 const Icon = category.icon;
@@ -116,14 +123,16 @@ export function ProductSidebar({ selectedCategory, onCategorySelect }: ProductSi
                       onClick={() => onCategorySelect(category.id)}
                       className={cn(
                         "transition-all duration-200 hover:bg-primary/10 rounded-lg",
+                        "w-full justify-start px-3 py-2 lg:px-4 lg:py-3",
+                        "text-xs lg:text-sm",
                         isActive && "bg-primary/20 text-primary font-medium border-r-2 border-primary"
                       )}
                     >
-                      <Icon className="h-4 w-4" />
+                      <Icon className="h-4 w-4 lg:h-4 lg:w-4 flex-shrink-0" />
                       {!collapsed && (
                         <>
-                          <span className="text-sm">{category.name}</span>
-                          <ChevronRight className="ml-auto h-4 w-4" />
+                          <span className="text-xs lg:text-sm ml-2 truncate">{category.name}</span>
+                          <ChevronRight className="ml-auto h-3 w-3 lg:h-4 lg:w-4 flex-shrink-0" />
                         </>
                       )}
                     </SidebarMenuButton>

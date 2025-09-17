@@ -18,39 +18,39 @@
     --popover: 0 0% 100%;
     --popover-foreground: 24 10% 10%;
 
-    /* Primary - Forest Green for trust and natural products */
-    --primary: 142 76% 36%;
+    /* Primary - Orange for main brand color */
+    --primary: 35 100% 50%;
     --primary-foreground: 0 0% 98%;
-    --primary-light: 142 76% 45%;
-    --primary-dark: 142 76% 25%;
+    --primary-light: 35 100% 60%;
+    --primary-dark: 35 100% 40%;
 
-    /* Secondary - Warm Earth tone */
-    --secondary: 45 29% 85%;
+    /* Secondary - Light orange tone */
+    --secondary: 35 50% 90%;
     --secondary-foreground: 24 10% 10%;
 
     /* Muted tones */
-    --muted: 45 29% 97%;
+    --muted: 35 30% 97%;
     --muted-foreground: 25 5% 45%;
 
-    /* Accent - Warm spice orange */
-    --accent: 25 95% 53%;
+    /* Accent - Green for accents */
+    --accent: 75 60% 45%;
     --accent-foreground: 0 0% 98%;
-    --accent-light: 25 95% 65%;
+    --accent-light: 75 60% 55%;
 
     /* Status colors */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     /* Border and input */
-    --border: 45 29% 88%;
-    --input: 45 29% 88%;
-    --ring: 142 76% 36%;
+    --border: 35 30% 88%;
+    --input: 35 30% 88%;
+    --ring: 35 100% 50%;
 
     /* Custom business colors */
-    --hero-gradient: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 25%) 100%);
-    --section-gradient: linear-gradient(180deg, hsl(45 29% 99%) 0%, hsl(45 29% 97%) 100%);
-    --card-shadow: 0 4px 20px -4px hsl(142 76% 36% / 0.1);
-    --hero-shadow: 0 25px 50px -12px hsl(142 76% 36% / 0.25);
+    --hero-gradient: linear-gradient(135deg, hsl(35 100% 50%) 0%, hsl(35 100% 40%) 100%);
+    --section-gradient: linear-gradient(180deg, hsl(35 30% 99%) 0%, hsl(35 30% 97%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(35 100% 50% / 0.1);
+    --hero-shadow: 0 25px 50px -12px hsl(35 100% 50% / 0.25);
     
     /* Typography scale */
     --font-size-hero: 3.5rem;
@@ -81,20 +81,20 @@
     --popover: 24 10% 10%;
     --popover-foreground: 0 0% 98%;
 
-    /* Primary - Lighter green for dark mode */
-    --primary: 142 76% 45%;
+    /* Primary - Lighter orange for dark mode */
+    --primary: 35 100% 60%;
     --primary-foreground: 24 10% 10%;
 
     /* Secondary */
-    --secondary: 45 29% 15%;
+    --secondary: 35 30% 15%;
     --secondary-foreground: 0 0% 98%;
 
     /* Muted tones */
-    --muted: 45 29% 15%;
+    --muted: 35 20% 15%;
     --muted-foreground: 25 5% 65%;
 
     /* Accent */
-    --accent: 25 95% 65%;
+    --accent: 75 60% 55%;
     --accent-foreground: 24 10% 10%;
 
     /* Status colors */
@@ -102,9 +102,9 @@
     --destructive-foreground: 0 0% 98%;
 
     /* Border and input */
-    --border: 45 29% 20%;
-    --input: 45 29% 20%;
-    --ring: 142 76% 45%;
+    --border: 35 20% 20%;
+    --input: 35 20% 20%;
+    --ring: 35 100% 60%;
   }
 }
 

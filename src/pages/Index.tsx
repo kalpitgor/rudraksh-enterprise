@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { CounterAnimation } from "@/components/CounterAnimation";
-import { TypewriterEffect } from "@/components/TypewriterEffect";
 // Sidebar components are only used on the Products page
 import ProductPage from "@/pages/products";
 import { 
@@ -60,12 +59,7 @@ const Index = () => {
                 Global Export Excellence
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-delay-2">
-                <TypewriterEffect 
-                  text="Premium Onion & Garlic Exports"
-                  speed={80}
-                  delay={800}
-                  className="bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent glow-text"
-                />
+                Premium Onion & Garlic Exports
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed animate-fade-in-delay-3">
                 Delivering the finest quality onions and garlic to global markets with 

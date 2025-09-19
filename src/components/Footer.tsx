@@ -1,4 +1,4 @@
-import { Award, CheckCircle, Globe, Shield, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+  import { Award, CheckCircle, Globe, Shield, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export default function Footer() {
   const socialLinks = [
@@ -17,52 +17,35 @@ export default function Footer() {
             <p className="text-background/80 mb-6">
               Premium dehydrated onion and garlic products with uncompromising quality and global reach.
             </p>
-            
-            {/* Social Media Links */}
-            <div className="mb-6">
-              <h4 className="font-semibold mb-3">Follow Us</h4>
-              <div className="flex space-x-3">
-                {socialLinks.map(({ icon: Icon, href, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-background/20 transition-colors group"
-                    aria-label={`Follow us on ${label}`}
-                  >
-                    <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Contact Info</h4>
-            <div className="space-y-3">
-              <div className="flex items-start text-background/80">
-                <Phone className="w-4 h-4 mr-3 mt-1 text-primary" />
-                <div>
-                  <a href="tel:+917383409122" className="hover:underline">
-                    +91 7383409122
-                  </a>
-                  <div className="text-sm">WhatsApp Available</div>
-                </div>
-              </div>
-              <div className="flex items-start text-background/80">
-                <Mail className="w-4 h-4 mr-3 mt-1 text-primary" />
-                <a href="mailto:sales@rudraksh-enterprise.com" className="hover:underline">
-                  sales@rudraksh-enterprise.com
-                </a>
-              </div>
-              <div className="flex items-start text-background/80">
-                <MapPin className="w-4 h-4 mr-3 mt-1 text-primary" />
-                <div>
-                  Mahuva, Bhavnagar<br />
-                  Gujarat, India
-                </div>
-              </div>
+            <div className="flex space-x-4">
+              <a 
+                href="https://www.instagram.com/rudraksh_enterprise_007?igsh=MW9hN3MxeGEwOG05YQ==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.facebook.com/share/16Nm2m5TxC/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors opacity-50"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors opacity-50"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
 

@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/carousel";
 
 // Import product images
-import heroImage from "@/assets/hero-onion-garlic.jpg";
+import heroBackground from "@/assets/hero-background.jpg";
 import dehydratedOnionPowder from "@/assets/dehydrated-onion-powder.jpg";
 import dehydratedGarlicPowder from "@/assets/dehydrated-garlic-powder.jpg";
 import friedOnions from "@/assets/fried-onions.jpg";
@@ -83,7 +83,16 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative overflow-hidden bg-gradient-to-b from-muted/50 to-background">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background" />
+        {/* Background Image with Transparency */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={heroBackground} 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-25"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        </div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
         
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-32">
           <motion.div

@@ -48,13 +48,10 @@ export default function Contact() {
                 <div className="flex items-start space-x-4">
                   <Phone className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1">Phone & WhatsApp</h3>
+                    <h3 className="font-semibold mb-1">Phone Numbers</h3>
                     <p className="text-muted-foreground">
                       <a href="tel:+917383409122" className="hover:underline hover:text-primary" aria-label="Call +91 7383409122">+91 7383409122</a><br />
-                      <a href="https://wa.me/917383409122" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-green-600 inline-flex items-center gap-1" aria-label="Chat on WhatsApp +91 7383409122">
-                        <MessageCircle className="w-4 h-4" />
-                        +91 7383409122 (WhatsApp)
-                      </a>
+                      <a href="tel:+919898338752" className="hover:underline hover:text-primary" aria-label="Call +91 98983 38752">+91 98983 38752</a>
                     </p>
                   </div>
                 </div>

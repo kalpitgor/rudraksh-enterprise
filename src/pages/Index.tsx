@@ -1,29 +1,20 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { CounterAnimation } from "@/components/CounterAnimation";
-// Sidebar components are only used on the Products page
-import ProductPage from "@/pages/products";
+import { motion, Variants } from "framer-motion";
 import { 
   Globe, 
-  Shield, 
-  Award, 
-  Truck, 
   Mail, 
-  Phone, 
-  MapPin,
-  CheckCircle,
-  Star,
-  Leaf,
   Package,
-  Users,
-  Timer,
-  User
+  Sparkles,
+  ArrowRight
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 // Import product images
 import heroImage from "@/assets/hero-onion-garlic.jpg";
@@ -33,88 +24,182 @@ import friedOnions from "@/assets/fried-onions.jpg";
 import onionFlakesVarieties from "@/assets/onion-flakes-varieties.jpg";
 import dehydratedMincedGarlic from "@/assets/dehydrated-minced-garlic.jpg";
 
-const Index = () => {
+// Animation variants
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
 
+const itemVariants: Variants = {
+  hidden: { y: 30, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const products = [
+  {
+    name: "Dehydrated Onion",
+    description: "Premium quality dehydrated onion flakes, powder, and granules",
+    image: dehydratedOnionPowder,
+  },
+  {
+    name: "Dehydrated Garlic",
+    description: "Fresh dehydrated garlic products for global markets",
+    image: dehydratedGarlicPowder,
+  },
+  {
+    name: "Fried Onions",
+    description: "Crispy golden fried onions with authentic taste",
+    image: friedOnions,
+  },
+  {
+    name: "Onion Flakes",
+    description: "Multiple varieties with consistent texture",
+    image: onionFlakesVarieties,
+  },
+  {
+    name: "Minced Garlic",
+    description: "High-quality minced garlic with excellent rehydration",
+    image: dehydratedMincedGarlic,
+  },
+];
+
+const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Global Header is rendered in App.tsx */}
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center section-gradient overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="floating-shapes">
-            <div className="shape shape-1"></div>
-            <div className="shape shape-2"></div>
-            <div className="shape shape-3"></div>
-            <div className="shape shape-4"></div>
-          </div>
-        </div>
+      <section id="home" className="relative overflow-hidden bg-gradient-to-b from-muted/50 to-background">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background" />
         
-        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-          <div className="space-y-8 animate-slide-up">
-            <div className="space-y-4">
-              <Badge className="bg-primary/10 text-primary border-primary/20 animate-fade-in-delay">
-                <Globe className="w-4 h-4 mr-2 animate-pulse" />
-                Global Export Excellence
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-32">
+          <motion.div
+            className="flex flex-col items-center text-center"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Badge */}
+            <motion.div variants={itemVariants}>
+              <Badge className="bg-primary/10 text-primary border-primary/20">
+                <Sparkles className="h-4 w-4 mr-2" />
+                <span>Premium Dehydrated Products</span>
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-delay-2">
-                Premium Onion & Garlic Exports
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed animate-fade-in-delay-3">
-                Delivering the finest quality onions and garlic to global markets with 
-                uncompromising hygiene standards, automated processing, and moisture-free packaging.
-              </p>
-            </div>
-            
-            <div className="flex flex-wrap gap-4 animate-fade-in-delay-4">
-              <Button asChild
-                variant="hero" 
-                size="lg" 
-                className="hover-float"
-              >
-                <Link to="/products" className="flex items-center">
-                  <Package className="w-5 h-5 mr-2" />
-                  Explore Products
+            </motion.div>
+
+            {/* Main Heading */}
+            <motion.h1
+              className="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
+              variants={itemVariants}
+            >
+              Rudraksh Enterprise
+            </motion.h1>
+
+            <motion.p
+              className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl"
+              variants={itemVariants}
+            >
+              Leading exporter of premium dehydrated onion and garlic products. 
+              Delivering quality and freshness to global markets.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div className="mt-10 flex flex-wrap items-center justify-center gap-4" variants={itemVariants}>
+              <Button asChild size="lg" className="gap-2">
+                <Link to="/products">
+                  <Package className="h-5 w-5" />
+                  View Products
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="hover-float">
-                <Mail className="w-5 h-5 mr-2" />
-                Request Samples
+              <Button asChild size="lg" variant="outline" className="gap-2">
+                <Link to="/contact">
+                  <Globe className="h-5 w-5" />
+                  Export Inquiry
+                </Link>
               </Button>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-3 gap-6 pt-8 animate-fade-in-delay-5">
-              <div className="text-center counter-animation">
-                <CounterAnimation target={50} suffix="+" />
-                <div className="text-sm text-muted-foreground">Countries Served</div>
+            {/* Stats */}
+            <motion.div
+              className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3"
+              variants={itemVariants}
+            >
+              <div className="flex flex-col items-center">
+                <CounterAnimation target={15} suffix="+" className="text-4xl font-bold text-primary" />
+                <div className="mt-2 text-sm text-muted-foreground">Years Experience</div>
               </div>
-              <div className="text-center counter-animation">
-                <CounterAnimation target={1000} suffix="+" />
-                <div className="text-sm text-muted-foreground">Happy Clients</div>
+              <div className="flex flex-col items-center">
+                <CounterAnimation target={50} suffix="+" className="text-4xl font-bold text-primary" />
+                <div className="mt-2 text-sm text-muted-foreground">Countries Served</div>
               </div>
-              <div className="text-center counter-animation">
-                <CounterAnimation target={99} suffix="%" />
-                <div className="text-sm text-muted-foreground">Quality Assurance</div>
+              <div className="flex flex-col items-center">
+                <CounterAnimation target={100} suffix="%" className="text-4xl font-bold text-primary" />
+                <div className="mt-2 text-sm text-muted-foreground">Quality Assured</div>
               </div>
-            </div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute left-0 top-1/4 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute right-0 bottom-1/4 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+      </section>
+
+      {/* Products Carousel */}
+      <section id="products" className="py-16 sm:py-24 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Our Premium Products
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Discover our range of high-quality dehydrated products
+            </p>
           </div>
 
-          <div className="relative animate-slide-left">
-            <div className="relative overflow-hidden rounded-2xl card-shadow hover-tilt">
-              <img 
-                src={heroImage} 
-                alt="Premium quality onions and garlic for export" 
-                className="w-full h-[600px] object-cover transform transition-transform duration-700 hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              <div className="absolute top-4 right-4">
-                <div className="bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center space-x-2 pulse-glow">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium">Premium Quality</span>
-                </div>
-              </div>
-            </div>
+          <div className="mt-12">
+            <Carousel opts={{ align: "start", loop: true }} className="w-full">
+              <CarouselContent>
+                {products.map((product, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-2">
+                      <div className="group relative overflow-hidden rounded-xl border border-border bg-card transition-all hover:shadow-lg">
+                        <div className="aspect-[4/3] overflow-hidden">
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                        <div className="p-6">
+                          <h3 className="text-xl font-semibold text-card-foreground">{product.name}</h3>
+                          <p className="mt-2 text-sm text-muted-foreground">{product.description}</p>
+                          <Button asChild variant="outline" className="mt-4 w-full gap-2">
+                            <Link to="/products">
+                              Learn More
+                              <ArrowRight className="h-4 w-4" />
+                            </Link>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </section>

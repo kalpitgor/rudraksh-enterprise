@@ -4,9 +4,10 @@ interface CounterAnimationProps {
   target: number;
   duration?: number;
   suffix?: string;
+  className?: string;
 }
 
-export const CounterAnimation = ({ target, duration = 2000, suffix = '' }: CounterAnimationProps) => {
+export const CounterAnimation = ({ target, duration = 2000, suffix = '', className = 'text-3xl font-bold text-primary' }: CounterAnimationProps) => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
@@ -58,7 +59,7 @@ export const CounterAnimation = ({ target, duration = 2000, suffix = '' }: Count
   }, [isVisible, target, duration]);
 
   return (
-    <div ref={elementRef} className="text-3xl font-bold text-primary">
+    <div ref={elementRef} className={className}>
       {count}{suffix}
     </div>
   );

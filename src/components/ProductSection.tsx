@@ -13,6 +13,12 @@ import dehydratedPinkOnionFlakes from "@/assets/dehydrated-pink-onion-flakes.png
 import dehydratedGarlicGranules from "@/assets/dehydrated-garlic-granules.png";
 import dehydratedGarlicChopped from "@/assets/dehydrated-garlic-chopped.png";
 import dehydratedGarlicMesh from "@/assets/dehydrated-garlic-mesh.png";
+// Powder images
+import dehydratedRedOnionPowder from "@/assets/dehydrated-red-onion-powder.png";
+import dehydratedWhiteOnionPowder from "@/assets/dehydrated-white-onion-powder.png";
+import dehydratedPinkOnionPowder from "@/assets/dehydrated-pink-onion-powder.png";
+import dehydratedGarlicPowder from "@/assets/dehydrated-garlic-powder.png";
+import dehydratedGarlicMinced from "@/assets/dehydrated-garlic-minced.png";
 
 interface Product {
   id: string;
@@ -39,12 +45,15 @@ const getProductImage = (productName: string, category: string): string | null =
     if (name.includes("granules")) return dehydratedGarlicGranules;
     if (name.includes("chopped")) return dehydratedGarlicChopped;
     if (name.includes("mesh")) return dehydratedGarlicMesh;
+    if (name.includes("powder")) return dehydratedGarlicPowder;
+    if (name.includes("minced")) return dehydratedGarlicMinced;
     return dehydratedGarlic;
   }
   
   // White Onion products
   if (category === "White Onion") {
     if (name.includes("flakes")) return dehydratedWhiteOnionFlakes;
+    if (name.includes("powder")) return dehydratedWhiteOnionPowder;
     return dehydratedWhiteOnionFlakes;
   }
   
@@ -52,6 +61,7 @@ const getProductImage = (productName: string, category: string): string | null =
   if (category === "Red Onion") {
     if (name.includes("flakes")) return dehydratedRedOnionFlakes;
     if (name.includes("chopped")) return dehydratedRedOnionChopped;
+    if (name.includes("powder")) return dehydratedRedOnionPowder;
     return dehydratedRedOnionFlakes;
   }
   
@@ -59,6 +69,7 @@ const getProductImage = (productName: string, category: string): string | null =
   if (category === "Pink Onion") {
     if (name.includes("flakes")) return dehydratedPinkOnionFlakes;
     if (name.includes("minced")) return dehydratedPinkOnionMinced;
+    if (name.includes("powder")) return dehydratedPinkOnionPowder;
     return dehydratedPinkOnionFlakes;
   }
   

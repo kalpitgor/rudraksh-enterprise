@@ -18,11 +18,16 @@ import {
 
 // Import product images
 import heroBackground from "@/assets/hero-background.jpg";
-import dehydratedOnionPowder from "@/assets/dehydrated-onion-powder.jpg";
-import dehydratedGarlicPowder from "@/assets/dehydrated-garlic-powder.jpg";
-import friedOnions from "@/assets/fried-onions.jpg";
-import onionFlakesVarieties from "@/assets/onion-flakes-varieties.jpg";
-import dehydratedMincedGarlic from "@/assets/dehydrated-minced-garlic.jpg";
+import dehydratedGarlic from "@/assets/dehydrated-garlic.png";
+import dehydratedPinkOnionMinced from "@/assets/dehydrated-pink-onion-minced.png";
+import dehydratedWhiteOnionFlakes from "@/assets/dehydrated-white-onion-flakes.png";
+import friedOnion from "@/assets/fried-onion.png";
+import dehydratedRedOnionFlakes from "@/assets/dehydrated-red-onion-flakes.png";
+import dehydratedRedOnionChopped from "@/assets/dehydrated-red-onion-chopped.png";
+import dehydratedPinkOnionFlakes from "@/assets/dehydrated-pink-onion-flakes.png";
+import dehydratedGarlicGranules from "@/assets/dehydrated-garlic-granules.png";
+import dehydratedGarlicChopped from "@/assets/dehydrated-garlic-chopped.png";
+import dehydratedGarlicMesh from "@/assets/dehydrated-garlic-mesh.png";
 
 // Animation variants
 const containerVariants: Variants = {
@@ -50,29 +55,54 @@ const itemVariants: Variants = {
 
 const products = [
   {
-    name: "Dehydrated Onion",
-    description: "Premium quality dehydrated onion flakes, powder, and granules",
-    image: dehydratedOnionPowder,
-  },
-  {
     name: "Dehydrated Garlic",
-    description: "Fresh dehydrated garlic products for global markets",
-    image: dehydratedGarlicPowder,
+    description: "Premium quality dehydrated garlic for global markets",
+    image: dehydratedGarlic,
   },
   {
-    name: "Fried Onions",
+    name: "Dehydrated White Onion Flakes",
+    description: "High-quality white onion flakes with consistent texture",
+    image: dehydratedWhiteOnionFlakes,
+  },
+  {
+    name: "Dehydrated Red Onion Flakes",
+    description: "Premium red onion flakes with rich color and flavor",
+    image: dehydratedRedOnionFlakes,
+  },
+  {
+    name: "Dehydrated Pink Onion Flakes",
+    description: "Delicate pink onion flakes for culinary excellence",
+    image: dehydratedPinkOnionFlakes,
+  },
+  {
+    name: "Dehydrated Pink Onion Minced",
+    description: "Finely minced pink onion with excellent rehydration",
+    image: dehydratedPinkOnionMinced,
+  },
+  {
+    name: "Dehydrated Red Onion Chopped",
+    description: "Chopped red onion pieces for versatile applications",
+    image: dehydratedRedOnionChopped,
+  },
+  {
+    name: "Fried Onion",
     description: "Crispy golden fried onions with authentic taste",
-    image: friedOnions,
+    image: friedOnion,
   },
   {
-    name: "Onion Flakes",
-    description: "Multiple varieties with consistent texture",
-    image: onionFlakesVarieties,
+    name: "Dehydrated Garlic Granules",
+    description: "Uniform garlic granules with strong flavor profile",
+    image: dehydratedGarlicGranules,
   },
   {
-    name: "Minced Garlic",
-    description: "High-quality minced garlic with excellent rehydration",
-    image: dehydratedMincedGarlic,
+    name: "Dehydrated Garlic Chopped",
+    description: "Chopped garlic with excellent aroma retention",
+    image: dehydratedGarlicChopped,
+  },
+  {
+    name: "Dehydrated Garlic Mesh",
+    description: "Fine garlic mesh for seasoning and food processing",
+    image: dehydratedGarlicMesh,
   },
 ];
 

@@ -2,6 +2,18 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
+// Import product images
+import dehydratedGarlic from "@/assets/dehydrated-garlic.png";
+import dehydratedPinkOnionMinced from "@/assets/dehydrated-pink-onion-minced.png";
+import dehydratedWhiteOnionFlakes from "@/assets/dehydrated-white-onion-flakes.png";
+import friedOnion from "@/assets/fried-onion.png";
+import dehydratedRedOnionFlakes from "@/assets/dehydrated-red-onion-flakes.png";
+import dehydratedRedOnionChopped from "@/assets/dehydrated-red-onion-chopped.png";
+import dehydratedPinkOnionFlakes from "@/assets/dehydrated-pink-onion-flakes.png";
+import dehydratedGarlicGranules from "@/assets/dehydrated-garlic-granules.png";
+import dehydratedGarlicChopped from "@/assets/dehydrated-garlic-chopped.png";
+import dehydratedGarlicMesh from "@/assets/dehydrated-garlic-mesh.png";
+
 interface Product {
   id: string;
   name: string;
@@ -17,6 +29,46 @@ interface ProductCategory {
 interface ProductSectionProps {
   categories?: ProductCategory[];
 }
+
+// Image mapping based on product name keywords
+const getProductImage = (productName: string, category: string): string | null => {
+  const name = productName.toLowerCase();
+  
+  // Garlic products
+  if (category === "Garlic") {
+    if (name.includes("granules")) return dehydratedGarlicGranules;
+    if (name.includes("chopped")) return dehydratedGarlicChopped;
+    if (name.includes("mesh")) return dehydratedGarlicMesh;
+    return dehydratedGarlic;
+  }
+  
+  // White Onion products
+  if (category === "White Onion") {
+    if (name.includes("flakes")) return dehydratedWhiteOnionFlakes;
+    return dehydratedWhiteOnionFlakes;
+  }
+  
+  // Red Onion products
+  if (category === "Red Onion") {
+    if (name.includes("flakes")) return dehydratedRedOnionFlakes;
+    if (name.includes("chopped")) return dehydratedRedOnionChopped;
+    return dehydratedRedOnionFlakes;
+  }
+  
+  // Pink Onion products
+  if (category === "Pink Onion") {
+    if (name.includes("flakes")) return dehydratedPinkOnionFlakes;
+    if (name.includes("minced")) return dehydratedPinkOnionMinced;
+    return dehydratedPinkOnionFlakes;
+  }
+  
+  // Fried Onion products
+  if (category === "Fried Onion") {
+    return friedOnion;
+  }
+  
+  return null;
+};
 
 const ProductSection: React.FC<ProductSectionProps> = ({ 
   categories = [
@@ -107,34 +159,45 @@ const ProductSection: React.FC<ProductSectionProps> = ({
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {category.products.map((product) => (
-                <Card 
-                  key={product.id} 
-                  className="group hover:shadow-lg transition-all duration-300 border-border bg-card hover:scale-105"
-                >
-                  <CardHeader className="pb-4">
-                    <div className="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                      <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/40 rounded-full flex items-center justify-center">
-                        <div className="w-12 h-12 bg-primary/60 rounded-full"></div>
+              {category.products.map((product) => {
+                const productImage = getProductImage(product.name, product.category);
+                return (
+                  <Card 
+                    key={product.id} 
+                    className="group hover:shadow-lg transition-all duration-300 border-border bg-card hover:scale-105"
+                  >
+                    <CardHeader className="pb-4">
+                      <div className="w-full h-48 bg-gradient-to-br from-muted to-muted/50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        {productImage ? (
+                          <img 
+                            src={productImage} 
+                            alt={product.name}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          />
+                        ) : (
+                          <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/40 rounded-full flex items-center justify-center">
+                            <div className="w-12 h-12 bg-primary/60 rounded-full"></div>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                    <Badge 
-                      variant="outline" 
-                      className={`w-fit ${getCategoryColor(product.category)}`}
-                    >
-                      {product.category}
-                    </Badge>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <CardTitle className="text-lg font-medium text-foreground leading-tight group-hover:text-primary transition-colors">
-                      {product.name}
-                    </CardTitle>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      High-quality dehydrated product with excellent flavor retention
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+                      <Badge 
+                        variant="outline" 
+                        className={`w-fit ${getCategoryColor(product.category)}`}
+                      >
+                        {product.category}
+                      </Badge>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <CardTitle className="text-lg font-medium text-foreground leading-tight group-hover:text-primary transition-colors">
+                        {product.name}
+                      </CardTitle>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        High-quality dehydrated product with excellent flavor retention
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         ))}
